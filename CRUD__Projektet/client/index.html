@@ -1,0 +1,100 @@
+<!-- HTML-dokumentet definierar en webbsida med en rubrik och flera sektioner.
+    Den består av 3 sektioner: 
+     Den första sektionen är en sökbox med en textinmatning och en rubrik.
+     Den andra sektionen är ett formulär för att lägga till nya böcker, den innehåller två inmatningsfält för titel och författare och en knapp för att skicka in formuläret.
+     Den tredje sektionen är en lista för att visa böcker som användaren vill läsa. -->
+
+<!-- Head-sektionen inkluderar en rubrik för webbsidan och länkar till resurser som favicon och en CSS-fil -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+<script src="https://cdn.tailwindcss.com"></script> 
+  <link rel="shortcut icon"
+        href="data:image/x-icon;"
+        type="image/x-icon" />
+  <title>Todo-applikation</title>
+</head>
+
+<body>
+  <main id="root" class="pb-24 bg-gradient-to-t from-stone-500 to-stone-300 min-h-screen">
+    
+    <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Bok</span>register</h1>
+<p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Komplett webbsida med CRUDfunktionalitet</p>
+
+
+    <section id="searchBox" class="flex-1 text-center mb-4 text-gray-600">
+      <h1 class="text-5xl p-2">Sök böcker</h1>
+                  <input class="w-2/4 placeholder-center rounded-full p-2 h-12 mx-auto text-black-500
+                  border-cyan-500 border-2 focus-within:outline-none focus:border-cyan-800 mb-2" 
+                  id="searchField" type="text" placeholder="Ange sökord"/>
+                </section>
+
+
+    <section class="flex gap-10 w-1/4 md:w-4/6 md:mx-auto bg-white bg-opacity-75 p-5 rounded-lg">
+                   
+      <section class="flex-1">
+        <h2 class="mb-6 text-3xl italic ">Lägg till egen bok</h2>
+
+        <form id="todoForm"
+              name="todoForm">
+          <section class="mb-2">
+            <label class="block pr-5 mb-2 text-xl italic"
+                   for="title">Titel</label>
+
+            <p class="message text-sm text-red-700 mb-2 hidden">
+              Error message
+            </p>
+
+            <input type="text"
+                   id="title"
+                   name="title"
+                   class="w-full rounded-md border-cyan-600 border-2 focus-within:outline-none focus:border-cyan-900 px-4 py-2" />
+          </section>
+          
+          <section class="mb-2">
+            <label class="block pr-5 mb-2 text-xl"
+                   for="description">Författare</label>
+            <p class="message text-sm text-red-700 mb-2 hidden">
+              Error message
+            </p>
+            <textarea maxlength="500"
+                      rows="1"
+                      id="description"
+                      name="description"
+                      class="resize-none w-full rounded-md border-cyan-600 border-2 focus-within:outline-none focus:border-cyan-900 px-4 py-2"></textarea>
+
+          </section>
+          
+
+          <button name="submitTodoForm"
+                  class="rounded-md bg-stone-900 text-stone-50 hover:text-teal-900 hover:bg-yellow-50 px-4 py-1"
+                  type="submit">
+            Spara
+          </button>
+        </form>
+      </section>
+
+      <section class="flex-1 px-5">
+        <h2 class="mb-6 text-3xl italic ">Böcker som jag vill läsa </h2>
+
+        <ul id="todoList">
+        </ul>
+      </section>
+    </section>
+  </main>
+  <script src="Api.js"></script>
+  <script src="script.js"></script>
+  <script src="Components/BookDetail.js"></script>
+  <script src="Components/Details.js"></script>
+  <script src="Components/BookListItem.js"></script>
+  <script src="Components/BookList.js"></script>
+</body>
+
+</html>
